@@ -1,0 +1,88 @@
+import React, { useEffect, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import NavbarUser from "../../Layout/NavbarUser";
+import { useParams } from "react-router-dom";
+import Tasks from "../Tasks/Tasks";
+import TaskContext from "../../../Context/task/taskContext";
+import TaskCard from "../Tasks/TaskCard";
+import axios from "axios";
+import CreateTask from "../Tasks/CreateTask";
+import StoryContext from "../../../Context/story/storyContext";
+import Button from "react-bootstrap/Button";
+import Banner from "../../Layout/Banner.js";
+import AuthContext from "../../../Context/auth/authContext.js";
+import Container from "react-bootstrap/esm/Container";
+import EditStory from "./EditStory";
+import { Col, Row } from "react-bootstrap";
+const Story = () => {
+  let { id } = useParams();
+  // console.log(id);
+  const storyContext = useContext(StoryContext);
+  const taskContext = useContext(TaskContext);
+  const { tasks, getTasks } = taskContext;
+
+  const authContext = useContext(AuthContext);
+  const { user, loadUser } = authContext;
+  const { story, getStory, deleteStory } = storyContext;
+  const navigate = useNavigate();
+
+  const handleDelete = () => {
+    deleteStory(id);
+    navigate("/adminstories");
+  };
+
+  useEffect(() => {
+    loadUser();
+    getStory(id);
+    getTasks();
+  }, []);
+  // console.log(story);
+  if (story) {
+    const { storyname, description, duedate, status } = story;
+  }
+  // console.log("jayesh ", tasks);
+  // console.log("id", id);
+
+  return (
+    <>
+      <Container>
+        <Row>
+          <Col>
+            <Banner title={story?.storyname} />
+            <div className="project-desc">
+              <h2 style={{ color: "black" }}>Story Description</h2>
+              {story && <p className="lead">{story.description}</p>}
+            </div>
+
+            <div className="create-task d-flex justify-content-evenly align-items-centre">
+              <CreateTask className="mr-2" id={id} name={story?.storyname} />
+              {user && user.isPM && (
+                <>
+                  <EditStory story={story} />
+                  <Button onClick={handleDelete} variant="danger" type="submit">
+                    Delete
+                  </Button>
+                </>
+              )}
+            </div>
+          </Col>
+          <Col className="mt-5">
+            <h1>Tasks</h1>
+            <div className="task-scroll">
+              <Row lg={1} md={1} sm={1}>
+                {tasks &&
+                  tasks.map(
+                    (task) =>
+                      task.story === id && (
+                        <TaskCard key={task._id} task={task} />
+                      )
+                  )}
+              </Row>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
+};
+export default Story;
