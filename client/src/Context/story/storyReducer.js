@@ -31,7 +31,7 @@ var switchCases = (state, action) => {
     case ADD_STORY:
       return {
         ...state,
-        stories: [...state.stories, action.payload],
+        adminStories: [...state.adminStories, action.payload],
         error: false,
       };
     case UPDATE_STORY:

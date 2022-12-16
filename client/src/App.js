@@ -16,6 +16,7 @@ import AdminTaskScreen from "./Components/Screens/Tasks/AdminTaskScreen";
 import NavbarUser from "./Components/Layout/NavbarUser";
 import AuthContext from "../src/Context/auth/authContext";
 import { useContext } from "react";
+import AdminStory from "./Components/Screens/Stories/AdminStory.js";
 
 function App() {
   axios.defaults.headers.common[
@@ -47,6 +48,7 @@ function App() {
                 <Route path="taskspage" element={<TasksScreen />} />
                 <Route path="storiespage" element={<StoriesScreen />} />
                 <Route path="story/:id" element={<Story />} />
+                <Route path="adminstory/:id" element={<AdminStory />} />
                 <Route path="adminstories" element={<AdminStoriesScreen />} />
                 <Route path="admintasks" element={<AdminTaskScreen />} />
               </Routes>

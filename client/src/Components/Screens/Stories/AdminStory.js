@@ -19,7 +19,7 @@ const Story = () => {
   // console.log(id);
   const storyContext = useContext(StoryContext);
   const taskContext = useContext(TaskContext);
-  const { tasks, getTasks } = taskContext;
+  const { adminTasks, getAdminTasks } = taskContext;
 
   const authContext = useContext(AuthContext);
   const { user, loadUser } = authContext;
@@ -34,13 +34,13 @@ const Story = () => {
   useEffect(() => {
     loadUser();
     getStory(id);
-    getTasks();
+    getAdminTasks();
   }, []);
   console.log(story);
   if (story) {
     const { storyname, description, duedate, status } = story;
   }
-  console.log("jayesh ", tasks);
+  console.log("jayesh ", adminTasks);
   // console.log("id", id);
 
   return (
@@ -75,8 +75,8 @@ const Story = () => {
             <h1>Tasks</h1>
             <div className="task-scroll">
               <Row lg={1} md={1} sm={1}>
-                {tasks &&
-                  tasks.map(
+                {adminTasks &&
+                  adminTasks.map(
                     (task) =>
                       task.story === id && (
                         <TaskCard key={task._id} task={task} />

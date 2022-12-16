@@ -30,7 +30,7 @@ function MyVerticallyCenteredModal(props) {
     if (duedate < currentDate) {
       alert("Enter valid date!!");
     } else {
-      addTask(taskname, story, taskdescription, duedate, status);
+      addTask(props.user, taskname, story, taskdescription, duedate, status);
       props.onHide(true);
     }
   };
@@ -95,7 +95,7 @@ function MyVerticallyCenteredModal(props) {
     </Modal>
   );
 }
-function CreateTask({ name, id }) {
+function CreateTask({ name, id, user }) {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
@@ -107,6 +107,7 @@ function CreateTask({ name, id }) {
         onHide={() => setModalShow(false)}
         name={name}
         id={id}
+        user={user}
       />
     </>
   );

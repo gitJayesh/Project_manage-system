@@ -11,7 +11,7 @@ const users = [
   {
     name: "Project Manager",
     email: "pm@example.com",
-    phone: "9660366537",
+    phone: "9632587411",
     password: bcrypt.hashSync("123456", 10),
     isPM: true,
   },

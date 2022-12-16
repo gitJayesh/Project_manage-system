@@ -14,7 +14,7 @@ import axios from "axios";
 
 const StoryState = (props) => {
   const initialState = {
-    stories: null,
+    stories: [],
     adminStories: null,
     story: null,
     current: null,
@@ -67,6 +67,7 @@ const StoryState = (props) => {
       .then((res) => {
         dispatch({ type: ADD_STORY, payload: res.data });
         alert("Created");
+        console.log(res.data);
       })
       .catch((err) => dispatch({ type: ERROR_STORY, payload: err.msg }));
   };

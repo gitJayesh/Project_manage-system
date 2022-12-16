@@ -61,10 +61,18 @@ const TaskState = (props) => {
     }
   };
   // Add Task
-  const addTask = async (taskname, story, taskdescription, duedate, status) => {
+  const addTask = async (
+    user,
+    taskname,
+    story,
+    taskdescription,
+    duedate,
+    status
+  ) => {
     // console.log(config);
     try {
       const res = await axios.post("/api/task", {
+        user,
         taskname,
         story,
         taskdescription,
@@ -82,6 +90,7 @@ const TaskState = (props) => {
         payload: error.response.msg,
       });
     }
+    console.log(user);
   };
   // Delete Task
   const deleteTask = async (id) => {

@@ -43,6 +43,7 @@ function MyVerticallyCenteredModal(props) {
     e.preventDefault();
     // console.log(story);
     addStory(story);
+    props.onHide(true);
   };
   //   console.log(props.task);
   //   const { taskname, taskdescription, duedate, status } = props.task;
@@ -106,9 +107,6 @@ function MyVerticallyCenteredModal(props) {
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>
           <Button
             variant="primary"
             type="submit"
