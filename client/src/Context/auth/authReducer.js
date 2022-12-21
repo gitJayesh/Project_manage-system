@@ -8,6 +8,7 @@ import {
   USER_LOGOUT,
   //   USER_DETAILS_REQUEST,
   USER_DETAILS_SUCCESS,
+  GET_USER_BY_ID,
   USER_DETAILS_FAIL,
   //   USER_DETAILS_RESET,
   USER_LIST_SUCCESS,
@@ -35,7 +36,7 @@ var switchCases = (state, action) => {
 
       return {
         ...state,
-        userInfo: action.payload,
+        user: action.payload,
         loading: false,
         isAuthenticated: true,
       };
@@ -61,6 +62,12 @@ var switchCases = (state, action) => {
       return {
         ...state,
         users: action.payload,
+        loading: false,
+      };
+    case GET_USER_BY_ID:
+      return {
+        ...state,
+        userInfo: action.payload,
         loading: false,
       };
     default:

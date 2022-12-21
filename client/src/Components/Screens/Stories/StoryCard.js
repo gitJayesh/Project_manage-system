@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Col from "react-bootstrap/Row";
 import AuthContext from "../../../Context/auth/authContext.js";
 import { useEffect, useContext } from "react";
+import UserLink from "../User/UserLink.js";
 
 function StoryCard({ story }) {
   const { _id, storyname, description } = story;
@@ -14,6 +15,7 @@ function StoryCard({ story }) {
   }, []);
 
   console.log(user && user);
+  console.log(story, "story");
   return (
     <Col>
       <Card>
@@ -22,6 +24,7 @@ function StoryCard({ story }) {
         </Card.Title>
         <Card.Body>
           {/* <Card.Title>Special title treatment</Card.Title> */}
+          <UserLink id={story?.user} />
           <Card.Text className="card-text-clamp">{description}</Card.Text>
           {user?.isPM ? (
             <Link
