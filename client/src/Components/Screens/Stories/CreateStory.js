@@ -130,7 +130,7 @@ function CreateStory() {
 
   useEffect(() => {
     loadAllUsers();
-  }, []);
+  }, users);
 
   console.log(users);
 

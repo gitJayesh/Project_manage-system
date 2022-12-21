@@ -87,12 +87,6 @@ const Register = () => {
                         onChange={(e) => setManager(e.target.checked)}
                       /> */}
                       <input
-                        type="checkbox"
-                        name="isPM"
-                        checked={isPM}
-                        onChange={(e) => setIsPM(e.target.checked)}
-                      />
-                      <input
                         type="password"
                         className="input"
                         placeholder="Password"
@@ -108,6 +102,16 @@ const Register = () => {
                         onChange={(e) => setconfirmPassword(e.target.value)}
                         style={{ margin: "5px" }}
                       />
+                      <div style={{ display: "flex" }}>
+                        <input
+                          style={{ marginRight: "5px" }}
+                          type="checkbox"
+                          name="isPM"
+                          checked={isPM}
+                          onChange={(e) => setIsPM(e.target.checked)}
+                        />
+                        <label>Project Manager</label>
+                      </div>
 
                       <input
                         type="submit"

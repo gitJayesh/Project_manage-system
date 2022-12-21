@@ -57,6 +57,7 @@ function MyVerticallyCenteredModal(props) {
     e.preventDefault();
     // console.log(editStory);
     updateStory(editStory);
+    props.modalShow(false);
   };
 
   return (
