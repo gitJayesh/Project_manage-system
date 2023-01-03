@@ -193,10 +193,11 @@ ul {
 
 .nav-bar {
   height: auto;
-  width: 90%;
+  width: 100%;
   /* background: white; */
   /* margin: 10px auto; */
-  position: relative;
+  position: fixed;
+  z-index: 100;
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
@@ -205,7 +206,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
-  border: 2px solid #000;
+  /* border: 2px solid #000 */
 }
 
 .nav-bar-search {
@@ -250,15 +251,102 @@ ul {
 }
 
 .greeting-banner {
-  height: 200px;
-  width: 90%;
-  background: rgba(255, 255, 255, 0.3);
+  height: 350px;
+  width: 100%;
+  background: url("../Components/img/one.jpg") center center/cover;
+  position: relative;
   box-shadow: 0 8px 25px -10px rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  color: white;
   /* border-radius: 10px; */
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  margin: 25px auto;
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  border-bottom: 3px solid #f02d3a;
+  /* margin: 25px auto; */
+}
+
+.greeting-banner * {
+  z-index: 10;
+}
+
+.greeting-banner::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(36, 170, 96, 0.75);
+}
+
+.greet-msg {
+  height: 70px;
+  width: 100%;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 2rem;
+  color: #0a369d;
+  background: #efefef;
+}
+
+.dashboard-card {
+  background-color: #0a369d !important;
+  height: 250px !important;
+  width: 250px !important;
+  background: url("../Components/img/stats.jpeg") center center/cover !important;
+}
+
+.dashboard-card * {
+  z-index: 100;
+  color: white;
+}
+.dashboard-card::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(36, 170, 96, 0.75);
+}
+
+.project-card {
+  background-color: #0a369d !important;
+  height: 250px !important;
+  width: 250px !important;
+  background: url("../Components/img/stories.jpg") center center/cover !important;
+}
+
+.project-card * {
+  z-index: 100;
+  color: white;
+}
+.project-card::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(36, 170, 96, 0.75);
+}
+
+.tasks-card {
+  background-color: #0a369d !important;
+  height: 250px !important;
+  width: 250px !important;
+  background: url("../Components/img/tasks.jpeg") center center/cover !important;
+}
+.tasks-card * {
+  z-index: 100;
+  color: white;
+}
+.tasks-card::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(36, 170, 96, 0.75);
 }
 
 .create-task {
@@ -268,7 +356,7 @@ ul {
 }
 
 .dashboard-cards {
-  height: 250px;
+  height: 400px;
   width: 90%;
   margin: auto;
   padding: 25px;

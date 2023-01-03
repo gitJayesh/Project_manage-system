@@ -10,7 +10,7 @@ const GreetingBanner = () => {
       <div className="greeting-banner place-center">
         {isAuthenticated ? (
           <h2>
-            Hello <span style={{ color: "blue" }}>{user && user.name}</span>,
+            Hello <span style={{ color: "#DD0426" }}>{user && user.name}</span>,
             Welcome To The Dashboard!
           </h2>
         ) : (

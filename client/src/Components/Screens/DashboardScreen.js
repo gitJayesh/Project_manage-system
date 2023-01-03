@@ -5,6 +5,7 @@ import "../../style/style.css";
 import GreetingBanner from "../Layout/GreetingBanner.js";
 import Card from "react-bootstrap/Card";
 import AuthContext from "../../Context/auth/authContext.js";
+import GreetMessage from "../Layout/GreetMessage";
 const DashboardScreen = () => {
   const authContext = useContext(AuthContext);
   const { user, loadUser } = authContext;
@@ -48,7 +49,7 @@ const DashboardScreen = () => {
   );
   const projectManagerLinks = (
     <Fragment>
-      <Card>
+      <Card className="dashboard-card  ">
         <Card.Body className="text-center">
           <Link
             to="/adminteams"
@@ -59,7 +60,7 @@ const DashboardScreen = () => {
           </Link>
         </Card.Body>
       </Card>
-      <Card>
+      <Card className="project-card">
         <Card.Body className="text-center">
           <Link
             to="/adminstories"
@@ -69,7 +70,7 @@ const DashboardScreen = () => {
           </Link>
         </Card.Body>
       </Card>
-      <Card>
+      <Card className="tasks-card">
         <Card.Body className="text-center">
           <Link
             to="/admintasks"
@@ -85,6 +86,7 @@ const DashboardScreen = () => {
   return (
     <>
       <GreetingBanner />
+      <GreetMessage />
       <div className="dashboard-cards">
         {user && (user.isPM ? projectManagerLinks : userLinks)}
       </div>
