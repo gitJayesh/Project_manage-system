@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
 // import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
 import Tasks from "./Tasks";
 import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 
 function TaskCard({ task }) {
-  const [modalStyle, setModalStyle] = useState("none");
-
-  const { taskname, taskdescription, duedate, status } = task;
+  const { taskname, duedate } = task;
   return (
     <Col>
       <Card style={{ width: "100%" }} className="border border-dark card-test">

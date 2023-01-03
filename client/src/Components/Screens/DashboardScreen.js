@@ -1,18 +1,17 @@
-import React, { Fragment, useContext, useEffect, useState } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import SideBar from "../Layout/SideBar.js";
 import "../../style/responsive.css";
 import "../../style/style.css";
-import NavbarUser from "../Layout/NavbarUser";
 import GreetingBanner from "../Layout/GreetingBanner.js";
 import Card from "react-bootstrap/Card";
 import AuthContext from "../../Context/auth/authContext.js";
 const DashboardScreen = () => {
   const authContext = useContext(AuthContext);
-  const { userInfo, user, isAuthenticated, loadUser } = authContext;
+  const { user, loadUser } = authContext;
 
   useEffect(() => {
     loadUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const userLinks = (

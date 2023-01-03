@@ -12,6 +12,7 @@ function StoryCard({ story }) {
   const { user, loadUser } = authContext;
   useEffect(() => {
     loadUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   console.log(user && user);

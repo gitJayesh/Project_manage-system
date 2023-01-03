@@ -16,7 +16,7 @@ import {
   // USER_DETAILS_RESET,
   USER_LIST_SUCCESS,
   USER_LIST_FAIL,
-  GET_USER_BY_ID,
+  // GET_USER_BY_ID,
 } from "../types.js";
 
 const AuthState = (props) => {
@@ -142,13 +142,13 @@ const AuthState = (props) => {
   //Get user by id
   const getUserById = async (id) => {
     console.log(id, "jayesh");
-    await axios
-      .get(`/api/user/${id}`)
-      .then((res) => {
-        console.log(res.data, "getuser");
-        dispatch({ type: GET_USER_BY_ID, payload: res.data });
-      })
-      .catch((err) => dispatch({ type: USER_DETAILS_FAIL, payload: err.msg }));
+    // await axios
+    //   .get(`/api/user/${id}`)
+    //   .then((res) => {
+    //     console.log(res.data, "getuser");
+    //     dispatch({ type: GET_USER_BY_ID, payload: res.data });
+    //   })
+    //   .catch((err) => dispatch({ type: USER_DETAILS_FAIL, payload: err.msg }));
   };
 
   return (

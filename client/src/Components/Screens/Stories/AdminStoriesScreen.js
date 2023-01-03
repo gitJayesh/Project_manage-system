@@ -1,8 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-// import Sidebar from "../Layout/SideBar.js";
-import NavbarUser from "../../Layout/NavbarUser.js";
-import Story from "./Story.js";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
 import StoryContext from "../../../Context/story/storyContext.js";
 import CreateStory from "./CreateStory";
 import StoryCard from "./StoryCard.js";
@@ -16,7 +12,7 @@ const AdminStoriesScreen = () => {
   axios.defaults.headers.common[
     "Authorization"
   ] = `Bearer ${localStorage.token}`;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const storyContext = useContext(StoryContext);
   const authContext = useContext(AuthContext);
@@ -26,11 +22,10 @@ const AdminStoriesScreen = () => {
   const { adminGetAllstory, adminStories } = storyContext;
   // console.log(adminStories);
 
-  const [modalStyle, setModalStyle] = useState("none");
-
   useEffect(() => {
     loadUser();
     adminGetAllstory();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // console.log(adminStories);

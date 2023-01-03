@@ -11,7 +11,7 @@ function MyVerticallyCenteredModal(props) {
   const { addTask } = taskContext;
 
   const [taskname, setName] = useState("");
-  const [story, setStory] = useState(props.id);
+  const [story] = useState(props.id);
 
   const [taskdescription, setTaskDescription] = useState("");
   const [duedate, setDuedate] = useState("");

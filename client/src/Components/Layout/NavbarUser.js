@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import React, { useContext } from "react";
-import AuthContext from "../../Context/auth/authContext";
+import React from "react";
+// import AuthContext from "../../Context/auth/authContext";
 import SideBar from "./SideBar";
 
 const NavbarUser = () => {
-  const authContext = useContext(AuthContext);
+  // const authContext = useContext(AuthContext);
   // const { logout, userInfo } = authContext;
 
   // const onLogout = () => {

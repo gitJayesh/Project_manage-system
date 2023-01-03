@@ -6,6 +6,7 @@ const UserLink = ({ id }) => {
   console.log(id, "ravi");
   useEffect(() => {
     getUserById(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
   console.log(userInfo, "getuser");
   return <>{userInfo?.name} </>;

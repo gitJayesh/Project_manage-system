@@ -1,11 +1,8 @@
 import React, { useEffect, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import NavbarUser from "../../Layout/NavbarUser";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import Tasks from "../Tasks/Tasks";
 import TaskContext from "../../../Context/task/taskContext";
 import TaskCard from "../Tasks/TaskCard";
-import axios from "axios";
 import CreateTask from "../Tasks/CreateTask";
 import StoryContext from "../../../Context/story/storyContext";
 import Button from "react-bootstrap/Button";
@@ -35,11 +32,9 @@ const Story = () => {
     loadUser();
     getStory(id);
     getAdminTasks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   console.log(story);
-  if (story) {
-    const { storyname, description, duedate, status } = story;
-  }
   console.log("jayesh ", adminTasks);
   // console.log("id", id);
 

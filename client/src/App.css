@@ -31,6 +31,13 @@ ul {
   padding: 5px;
 }
 
+.button-sidebar {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+}
+
 /* Navbar */
 .navbar {
   height: 80px;

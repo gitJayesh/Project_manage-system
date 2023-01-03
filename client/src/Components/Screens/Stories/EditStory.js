@@ -28,14 +28,14 @@ function MyVerticallyCenteredModal(props) {
 
   const { updateStory } = StoryContext;
   const { users, loadAllUsers } = AuthContext;
-  const now = 60;
   // const onClick = () => {
   //   setEdit(false);
   // };
 
   useEffect(() => {
     loadAllUsers();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, users);
 
   console.log(users);
 
@@ -76,7 +76,7 @@ function MyVerticallyCenteredModal(props) {
           <Form.Group className="mb-3" controlId="user">
             <Form.Label>User</Form.Label>
             <Form.Control as="select" onChange={(e) => handleChange(e)}>
-              {options?.map((option) => {
+              {/* {options?.map((option) => {
                 if (editStory.user === option.value) {
                   return (
                     <option key={option.value} value={option.value}>
@@ -84,9 +84,17 @@ function MyVerticallyCenteredModal(props) {
                     </option>
                   );
                 }
-              })}
+              })} */}
 
-              {options?.map((option) => {
+              {options
+                ?.filter((option) => editStory.user !== option.value)
+                .map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+
+              {/* {options?.map((option) => {
                 if (editStory.user !== option.value) {
                   return (
                     <option key={option.value} value={option.value}>
@@ -94,7 +102,7 @@ function MyVerticallyCenteredModal(props) {
                     </option>
                   );
                 }
-              })}
+              })} */}
             </Form.Control>
           </Form.Group>
           <Form.Group className="mb-3" controlId="storyname">

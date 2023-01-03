@@ -24,7 +24,7 @@ function MyVerticallyCenteredModal(props) {
   props.users && console.log(props.users);
 
   props.users &&
-    props.users.map((user) => {
+    props.users.forEach((user) => {
       if (!user.isPM) {
         options.push({ value: user._id, label: user.name });
       }
@@ -130,6 +130,7 @@ function CreateStory() {
 
   useEffect(() => {
     loadAllUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, users);
 
   console.log(users);
