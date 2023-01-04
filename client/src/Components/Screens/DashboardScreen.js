@@ -50,10 +50,10 @@ const DashboardScreen = () => {
   const projectManagerLinks = (
     <Fragment>
       <Card className="dashboard-card  ">
-        <Card.Body className="text-center">
+        <Card.Body className="text-center d-flex justify-content-center align-items-center">
           <Link
             to="/adminteams"
-            style={{ textDecoration: "none", color: "black" }}
+            style={{ textDecoration: "none", color: "#fff" }}
           >
             <i className="fa-solid fa-table-columns fa-4x d-block"></i>Health
             Dashboard
@@ -61,20 +61,20 @@ const DashboardScreen = () => {
         </Card.Body>
       </Card>
       <Card className="project-card">
-        <Card.Body className="text-center">
+        <Card.Body className="text-center d-flex justify-content-center align-items-center">
           <Link
             to="/adminstories"
-            style={{ textDecoration: "none", color: "black" }}
+            style={{ textDecoration: "none", color: "#fff" }}
           >
             <i className="fa-solid fa-laptop-file fa-4x"></i>Stories
           </Link>
         </Card.Body>
       </Card>
       <Card className="tasks-card">
-        <Card.Body className="text-center">
+        <Card.Body className="text-center d-flex justify-content-center align-items-center">
           <Link
             to="/admintasks"
-            style={{ textDecoration: "none", color: "black" }}
+            style={{ textDecoration: "none", color: "#fff" }}
           >
             <i className="fa-solid fa-bars-progress fa-4x"></i>Tasks
           </Link>

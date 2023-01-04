@@ -5,7 +5,6 @@ import LandingScreenHome from "./Components/Screens/LandingScreenHome";
 import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register";
 import DashboardScreen from "./Components/Screens/DashboardScreen";
-import Authstate from "./Context/auth/AuthState.js";
 import TaskState from "./Context/task/TaskState.js";
 import StoryState from "./Context/story/StoryState.js";
 import TasksScreen from "./Components/Screens/TasksScreen";
@@ -33,26 +32,38 @@ function App() {
       <StoryState>
         <TaskState>
           <div className="App">
-            <div
-              className={
-                isAuthenticated ? "main-content" : "main-content-noAuth"
-              }
-            >
-              <NavbarUser />
+            {isAuthenticated ? (
+              <div
+                // className={
+                //   isAuthenticated ? "main-content" : "main-content-noAuth"
+                // }
+                className="main-content"
+              >
+                <NavbarUser />
 
-              <Routes>
-                <Route path="/" element={<DashboardScreen />} />
-                {/* <Route exact path="landing" element={<LandingScreenHome />} /> */}
-                <Route path="login" element={<Login />} />
-                <Route path="register" element={<Register />} />
-                <Route path="taskspage" element={<TasksScreen />} />
-                <Route path="storiespage" element={<StoriesScreen />} />
-                <Route path="story/:id" element={<Story />} />
-                <Route path="adminstory/:id" element={<AdminStory />} />
-                <Route path="adminstories" element={<AdminStoriesScreen />} />
-                <Route path="admintasks" element={<AdminTaskScreen />} />
-              </Routes>
-            </div>
+                <Routes>
+                  <Route path="/" element={<DashboardScreen />} />
+                  {/* <Route exact path="landing" element={<LandingScreenHome />} /> */}
+                  <Route path="login" element={<Login />} />
+                  <Route path="register" element={<Register />} />
+                  <Route path="taskspage" element={<TasksScreen />} />
+                  <Route path="storiespage" element={<StoriesScreen />} />
+                  <Route path="story/:id" element={<Story />} />
+                  <Route path="adminstory/:id" element={<AdminStory />} />
+                  <Route path="adminstories" element={<AdminStoriesScreen />} />
+                  <Route path="admintasks" element={<AdminTaskScreen />} />
+                </Routes>
+              </div>
+            ) : (
+              //landing screen
+              <div>
+                <LandingScreenHome />
+                <Routes>
+                  <Route path="login" element={<Login />} />
+                  <Route path="register" element={<Register />} />
+                </Routes>
+              </div>
+            )}
           </div>
         </TaskState>
       </StoryState>

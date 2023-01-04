@@ -306,6 +306,7 @@ ul {
   top: 0;
   left: 0;
   background: rgba(36, 170, 96, 0.75);
+  border-radius: 5px;
 }
 
 .project-card {
@@ -327,6 +328,7 @@ ul {
   top: 0;
   left: 0;
   background: rgba(36, 170, 96, 0.75);
+  border-radius: 5px;
 }
 
 .tasks-card {
@@ -347,6 +349,7 @@ ul {
   top: 0;
   left: 0;
   background: rgba(36, 170, 96, 0.75);
+  border-radius: 5px;
 }
 
 .create-task {
