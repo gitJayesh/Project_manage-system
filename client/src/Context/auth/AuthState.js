@@ -26,7 +26,7 @@ const AuthState = (props) => {
     isAuthenticated: null,
     userInfo: null,
     user: null,
-    loading: true,
+    loading: null,
     error: null,
   };
 

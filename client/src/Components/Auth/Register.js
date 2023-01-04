@@ -40,7 +40,7 @@ const Register = () => {
           className="d-flex justify-content-center align-items-center"
         >
           <Row>
-            <Card>
+            <Card style={{ width: "100%", height: "100%" }}>
               <Row xs={1} md={2}>
                 <Col className="d-flex justify-content-center align-items-center">
                   <img

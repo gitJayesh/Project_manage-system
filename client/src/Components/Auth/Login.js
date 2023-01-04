@@ -32,10 +32,10 @@ const Login = () => {
       <Container>
         <div
           style={{ height: "80vh" }}
-          className="d-flex justify-content-center align-items-center"
+          className="d-flex justify-content-center align-items-center "
         >
           <Row>
-            <Card>
+            <Card style={{ width: "100%", height: "100%" }}>
               <Row xs={1} md={2}>
                 <Col className="d-flex justify-content-center align-items-center">
                   {/* <div className="login-card-gif"> */}

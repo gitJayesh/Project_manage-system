@@ -56,9 +56,9 @@ function App() {
               </div>
             ) : (
               //landing screen
-              <div>
-                <LandingScreenHome />
+              <div className="App">
                 <Routes>
+                  <Route path="/" element={<LandingScreenHome />} />
                   <Route path="login" element={<Login />} />
                   <Route path="register" element={<Register />} />
                 </Routes>
