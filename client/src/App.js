@@ -57,6 +57,7 @@ function App() {
             ) : (
               //landing screen
               <div className="App">
+                <NavbarUser />
                 <Routes>
                   <Route path="/" element={<LandingScreenHome />} />
                   <Route path="login" element={<Login />} />
