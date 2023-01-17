@@ -62,13 +62,13 @@ const Login = () => {
                     </div>
                     <div className="form-container1">
                       {error && email.length <= 0 ? (
-                        <label style={errostyle}>* required</label>
+                        <span style={errostyle}>* required</span>
                       ) : (
                         ""
                       )}
                       <input
                         type="email"
-                        className={error ? "input" : "bg-dark errorInput"}
+                        className={error ? "error-input" : "input"}
                         placeholder="Email"
                         value={email}
                         onChange={(e) => {
@@ -82,7 +82,7 @@ const Login = () => {
                       )}
                       <input
                         type="password"
-                        className="input"
+                        className={error ? "error-input" : "input"}
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}

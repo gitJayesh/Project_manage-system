@@ -457,12 +457,12 @@ ul {
   margin: 5px 20px;
 }
 
-.errorInput {
+.error-input {
   height: 55px;
   width: 100%;
   border-radius: 50px;
   padding-left: 20px;
-  background: red;
+  background: #e5f5ff;
   border: red solid 1px;
   margin: 5px 20px;
 }
@@ -487,6 +487,10 @@ form {
   width: 90%;
   margin: auto;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
 }
 
 .form-container1 {
