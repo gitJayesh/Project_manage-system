@@ -91,7 +91,7 @@ li {
   width: 100%;
   background: #fff;
   padding: 20px;
-  background: url("business.jpg") center center/cover no-repeat;
+  /* background: url("business.jpg") center center/cover no-repeat; */
   position: relative;
   color: #fff;
 }
@@ -264,7 +264,7 @@ li {
   height: 100vh;
   width: 100%;
   background: #377dff;
-  background: url("Waimakariri.png") no-repeat center center/cover;
+  /* background: url("Waimakariri.png") no-repeat center center/cover; */
   padding: 20px;
   position: relative;
   color: #fff;
@@ -340,6 +340,16 @@ form .login-head {
   padding-left: 20px;
   background: #e5f5ff;
   border: none;
+  margin: 5px 20px;
+}
+
+.errorInput {
+  height: 55px;
+  width: 100%;
+  border-radius: 50px;
+  padding-left: 20px;
+  background: red;
+  border: red solid 1px;
   margin: 5px 20px;
 }
 

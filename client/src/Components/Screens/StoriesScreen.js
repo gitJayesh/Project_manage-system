@@ -7,6 +7,7 @@ import axios from "axios";
 import Banner from "../Layout/Banner.js";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import Table from "react-bootstrap/Table";
 
 const StoriesScreen = () => {
   axios.defaults.headers.common[
@@ -28,7 +29,6 @@ const StoriesScreen = () => {
     <>
       <Banner title="Engineer Stories" />
       <div className="create-task">{user && user.isPM && <CreateStory />}</div>
-      {/* <div className="user-dashboard-cards"> */}
       <Container>
         <Row
           md={3}
@@ -37,12 +37,27 @@ const StoriesScreen = () => {
           xs={1}
           className="gap-4 justify-content-center align-itmes-center"
         >
-          {stories &&
-            stories.map((story) => <StoryCard key={story._id} story={story} />)}
-          {/* </div> */}
+          <Table striped hover>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Story Name</th>
+                <th>Description</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {stories &&
+                stories.map((story) => (
+                  <StoryCard key={story._id} story={story} />
+                ))}
+            </tbody>
+          </Table>
         </Row>
       </Container>
     </>
   );
 };
 export default StoriesScreen;
+// {stories &&
+// stories.map((story) => <StoryCard key={story._id} story={story} />)}

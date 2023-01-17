@@ -1,12 +1,11 @@
 import React from "react";
-import SideBar from "../Layout/SideBar";
-
+import logo from "./logo.png";
 const LandingScreenHome = () => {
   return (
     <div className="bg-dark">
       <h1>
         <p>landing screen</p>
-        <SideBar />
+        <img src={logo} alt="hell" />
       </h1>
     </div>
   );

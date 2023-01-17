@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
+// import "../../style/style1.css";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../Context/auth/authContext";
 import loginGIF from "../img/login.gif";
@@ -11,15 +12,20 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [error, setError] = useState(false);
+
   const navigate = useNavigate();
   useEffect(() => {
     if (isAuthenticated) {
       navigate("/");
     }
   });
+
   const onSubmit = (e) => {
     e.preventDefault();
-
+    if (email.length == 0 || password.length == 0) {
+      setError(true);
+    }
     console.log(email, password);
     login(email, password);
     console.log(userInfo);
@@ -55,15 +61,25 @@ const Login = () => {
                       </h3>
                     </div>
                     <div className="form-container1">
+                      {error && email.length <= 0 ? (
+                        <label style={errostyle}>* required</label>
+                      ) : (
+                        ""
+                      )}
                       <input
                         type="email"
-                        className="input"
+                        className={error ? "input" : "bg-dark errorInput"}
                         placeholder="Email"
                         value={email}
                         onChange={(e) => {
                           setEmail(e.target.value);
                         }}
                       />
+                      {error && password.length <= 0 ? (
+                        <label style={errostyle}>* required</label>
+                      ) : (
+                        ""
+                      )}
                       <input
                         type="password"
                         className="input"
@@ -71,7 +87,11 @@ const Login = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                       />
-                      <input type="submit" className="input input-btn" />
+                      <input
+                        // onClick={onClick}
+                        type="submit"
+                        className="input input-btn"
+                      />
                     </div>
                   </form>
                 </Col>
@@ -86,3 +106,7 @@ const Login = () => {
 };
 
 export default Login;
+
+const errostyle = {
+  color: "red",
+};

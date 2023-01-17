@@ -193,10 +193,10 @@ ul {
 
 .nav-bar {
   height: auto;
-  width: 100%;
-  /* background: white; */
+  width: 90%;
+  /* background: #fff; */
   /* margin: 10px auto; */
-  position: fixed;
+  position: absolute;
   z-index: 100;
   top: 10px;
   left: 50%;
@@ -291,7 +291,7 @@ ul {
   background-color: #0a369d !important;
   height: 250px !important;
   width: 250px !important;
-  background: url("../Components/img/stats.jpeg") center center/cover !important;
+  background: url("../Components/img/statics.jpg") center center/cover !important;
 }
 
 .dashboard-card * {
@@ -305,7 +305,7 @@ ul {
   width: 100%;
   top: 0;
   left: 0;
-  background: rgba(36, 170, 96, 0.75);
+  background: rgba(121, 188, 184, 0.75);
   border-radius: 5px;
 }
 
@@ -327,7 +327,7 @@ ul {
   width: 100%;
   top: 0;
   left: 0;
-  background: rgba(36, 170, 96, 0.75);
+  background: rgba(144, 151, 192, 0.75);
   border-radius: 5px;
 }
 
@@ -348,7 +348,7 @@ ul {
   width: 100%;
   top: 0;
   left: 0;
-  background: rgba(36, 170, 96, 0.75);
+  background: rgba(219, 108, 121, 0.75);
   border-radius: 5px;
 }
 
@@ -445,4 +445,48 @@ ul {
   margin-top: 5px;
   text-align: justify;
   word-spacing: 2px;
+}
+
+.input {
+  height: 55px;
+  width: 100%;
+  border-radius: 50px;
+  padding-left: 20px;
+  background: #e5f5ff;
+  border: none;
+  margin: 5px 20px;
+}
+
+.errorInput {
+  height: 55px;
+  width: 100%;
+  border-radius: 50px;
+  padding-left: 20px;
+  background: red;
+  border: red solid 1px;
+  margin: 5px 20px;
+}
+
+.input:last-child {
+  border: none;
+}
+
+.input-btn {
+  background: #377dff;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 2px;
+  display: block;
+}
+
+.form-container1 {
+  /* height: 320px; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
 }

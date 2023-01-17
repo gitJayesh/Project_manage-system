@@ -16,6 +16,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
   const [isPM, setIsPM] = useState(false);
+  const [error, setError] = useState(false);
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -26,6 +27,16 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
+    if (
+      name.length == 0 ||
+      email.length == 0 ||
+      phone.length == 0 ||
+      isPM.length == 0 ||
+      password.length == 0
+    ) {
+      setError(true);
+    }
     console.log(name, email, phone, isPM, password);
     register(name, email, phone, isPM, password);
   };
@@ -56,6 +67,11 @@ const Register = () => {
                       user <span style={{ color: "#377dff" }}>Register</span>
                     </div>
                     <div className="form-container1">
+                      {error && name.length <= 0 ? (
+                        <label>* required</label>
+                      ) : (
+                        ""
+                      )}
                       <input
                         type="text"
                         className="input"
@@ -64,6 +80,11 @@ const Register = () => {
                         onChange={(e) => setName(e.target.value)}
                         style={{ margin: "5px" }}
                       />
+                      {error && email.length <= 0 ? (
+                        <label>* required</label>
+                      ) : (
+                        ""
+                      )}
                       <input
                         type="email"
                         className="input"
@@ -72,6 +93,11 @@ const Register = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         style={{ margin: "5px" }}
                       />
+                      {error && phone.length <= 0 ? (
+                        <label>* required</label>
+                      ) : (
+                        ""
+                      )}
                       <input
                         type="text"
                         className="input"
@@ -87,6 +113,11 @@ const Register = () => {
                         checked={manager}
                         onChange={(e) => setManager(e.target.checked)}
                       /> */}
+                      {error && password.length <= 0 ? (
+                        <label>* required</label>
+                      ) : (
+                        ""
+                      )}
                       <input
                         type="password"
                         className="input"

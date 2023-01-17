@@ -7,6 +7,7 @@ import axios from "axios";
 import Banner from "../../Layout/Banner.js";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import Table from "react-bootstrap/Table";
 
 const AdminStoriesScreen = () => {
   axios.defaults.headers.common[
@@ -45,10 +46,22 @@ const AdminStoriesScreen = () => {
           xs={1}
           className="gap-4 justify-content-center align-itmes-center"
         >
-          {adminStories &&
-            adminStories.map((story) => (
-              <StoryCard key={story._id} story={story} />
-            ))}
+          <Table striped hover>
+            <thead>
+              <tr>
+                <th>SR.</th>
+                <th>Story Name</th>
+                <th>Description</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {adminStories &&
+                adminStories.map((story) => (
+                  <StoryCard key={story._id} story={story} />
+                ))}
+            </tbody>
+          </Table>
         </Row>
       </Container>
     </>
@@ -56,3 +69,7 @@ const AdminStoriesScreen = () => {
 };
 
 export default AdminStoriesScreen;
+// {adminStories &&
+//   adminStories.map((story) => (
+//     <StoryCard key={story._id} story={story} />
+//   ))}
