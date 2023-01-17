@@ -482,6 +482,13 @@ ul {
   display: block;
 }
 
+form {
+  height: 100%;
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
 .form-container1 {
   /* height: 320px; */
   width: 100%;
