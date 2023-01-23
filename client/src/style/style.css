@@ -457,12 +457,12 @@ ul {
   margin: 5px 20px;
 }
 
-.errorInput {
+.error-input {
   height: 55px;
   width: 100%;
   border-radius: 50px;
   padding-left: 20px;
-  background: red;
+  background: #e5f5ff;
   border: red solid 1px;
   margin: 5px 20px;
 }
@@ -487,6 +487,10 @@ form {
   width: 90%;
   margin: auto;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
 }
 
 .form-container1 {
@@ -496,4 +500,32 @@ form {
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+}
+
+.auth-page {
+  height: 100vh;
+  position: relative;
+  background: url("../Components/img/login-back.jpg") center center/cover;
+}
+.auth-page::after {
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.auth-page * {
+  z-index: 100;
+}
+
+.background-grey {
+  background: rgba(192, 189, 189, 0.18);
+}
+
+.landing-page {
+  height: 100vh;
+  background: url("../Components/img/two.jpg") center center/cover;
 }

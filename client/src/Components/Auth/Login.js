@@ -33,8 +33,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="auth-page">
-        {/* <div className="auth-page"> */}
+      <div className="auth-page place-center">
         {loading && <p>Loading</p>}
         <Container>
           <div
@@ -54,22 +53,22 @@ const Login = () => {
                     />
                     {/* </div> */}
                   </Col>
-                  <Col className="d-flex justify-content-center align-items-center">
+                  <Col className="d-flex justify-content-center align-items-cente background-grey">
                     <form onSubmit={onSubmit}>
                       <div className="login-head place-center">
                         <h3>
-                          User <span style={{ color: "#377dff" }}>Login</span>
+                          <span style={{ color: "#377dff" }}>Login</span>
                         </h3>
                       </div>
                       <div className="form-container1">
                         {error && email.length <= 0 ? (
-                          <label style={errostyle}>* required</label>
+                          <span style={errostyle}>* required</span>
                         ) : (
                           ""
                         )}
                         <input
                           type="email"
-                          className={error ? "input" : "bg-dark errorInput"}
+                          className={error ? "error-input" : "input"}
                           placeholder="Email"
                           value={email}
                           onChange={(e) => {
@@ -83,7 +82,7 @@ const Login = () => {
                         )}
                         <input
                           type="password"
-                          className="input"
+                          className={error ? "error-input" : "input"}
                           placeholder="Password"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
