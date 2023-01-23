@@ -29,11 +29,11 @@ const Register = () => {
     e.preventDefault();
 
     if (
-      name.length == 0 ||
-      email.length == 0 ||
-      phone.length == 0 ||
-      isPM.length == 0 ||
-      password.length == 0
+      name.length === 0 ||
+      email.length === 0 ||
+      phone.length === 0 ||
+      isPM.length === 0 ||
+      password.length === 0
     ) {
       setError(true);
     }
@@ -42,7 +42,7 @@ const Register = () => {
   };
 
   return (
-    <>
+    <div className="auth-page">
       {loading && <p>Loading</p>}
 
       <Container>
@@ -158,7 +158,7 @@ const Register = () => {
           </Row>
         </div>
       </Container>
-    </>
+    </div>
   );
 };
 

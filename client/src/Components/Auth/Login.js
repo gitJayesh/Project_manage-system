@@ -23,7 +23,7 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (email.length == 0 || password.length == 0) {
+    if (email.length === 0 || password.length === 0) {
       setError(true);
     }
     console.log(email, password);
@@ -32,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div className="auth-page">
       {/* <div className="auth-page"> */}
       {loading && <p>Loading</p>}
       <Container>
@@ -101,7 +101,7 @@ const Login = () => {
         </div>
       </Container>
       {/* </div> */}
-    </>
+    </div>
   );
 };
 
