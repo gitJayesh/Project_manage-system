@@ -1,17 +1,14 @@
 UI:
 -footer
 -back button
--login/register form 
--greeting msg (good morning)
+-login/register form -----------------//done//
+-greeting msg (good morning) 
 -remove delete button -----------------//done//
--change create story button
--story page change UI
 -landing page
+-story page change UI
 
 
 FUNCTIONALITY:
 -login using email or userid
 -forgot password
 -user profile page
--show user for specific story/task
--min characters in story/task description

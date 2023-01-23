@@ -527,5 +527,42 @@ form {
 
 .landing-page {
   height: 100vh;
-  background: url("../Components/img/two.jpg") center center/cover;
+  background: url("../Components/img/business.jpg") center center/cover;
+  position: relative;
+}
+
+.landing-page::after {
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+}
+.landing-page * {
+  z-index: 100;
+}
+
+.landing-content {
+  background: red;
+  width: 50%;
+  /* margin-top: 100px; */
+  text-align: center;
+  text-transform: capitalize;
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+@media (max-width: 400px) {
+  .landing-content {
+    width: 320px;
+    right: 50%;
+    /* top: 25%; */
+    transform: translate(45%, -50%);
+    /* background: #fff; */
+  }
 }
