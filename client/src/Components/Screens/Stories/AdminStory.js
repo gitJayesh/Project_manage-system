@@ -42,43 +42,11 @@ const Story = () => {
     <>
       <Container>
         <Row>
-          <Col>
-            <Banner title={story?.storyname} />
-            <div className="project-desc">
-              <h2 style={{ color: "black" }}>Story Description</h2>
-              {story && <p className="lead">{story.description}</p>}
-            </div>
-
-            <div className="create-task d-flex justify-content-evenly align-items-centre">
-              <CreateTask
-                className="mr-2"
-                id={id}
-                name={story?.storyname}
-                user={story?.user}
-              />
-              {user && user.isPM && (
-                <>
-                  <EditStory story={story} />
-                  <Button onClick={handleDelete} variant="danger" type="submit">
-                    Delete
-                  </Button>
-                </>
-              )}
-            </div>
+          <Col md={8} className="bg-dark">
+            jayesh
           </Col>
-          <Col className="mt-5">
-            <h1>Tasks</h1>
-            <div className="task-scroll">
-              <Row lg={1} md={1} sm={1}>
-                {adminTasks &&
-                  adminTasks.map(
-                    (task) =>
-                      task.story === id && (
-                        <TaskCard key={task._id} task={task} />
-                      )
-                  )}
-              </Row>
-            </div>
+          <Col md={4} className="bg-primary">
+            ravi
           </Col>
         </Row>
       </Container>
@@ -86,3 +54,46 @@ const Story = () => {
   );
 };
 export default Story;
+
+// <Container>
+//         <Row>
+//           <Col>
+//             <Banner title={story?.storyname} />
+//             <div className="project-desc">
+//               <h2 style={{ color: "black" }}>Story Description</h2>
+//               {story && <p className="lead">{story.description}</p>}
+//             </div>
+
+//             <div className="create-task d-flex justify-content-evenly align-items-centre">
+//               <CreateTask
+//                 className="mr-2"
+//                 id={id}
+//                 name={story?.storyname}
+//                 user={story?.user}
+//               />
+//               {user && user.isPM && (
+//                 <>
+//                   <EditStory story={story} />
+//                   <Button onClick={handleDelete} variant="danger" type="submit">
+//                     Delete
+//                   </Button>
+//                 </>
+//               )}
+//             </div>
+//           </Col>
+//           <Col className="mt-5">
+//             <h1>Tasks</h1>
+//             <div className="task-scroll">
+//               <Row lg={1} md={1} sm={1}>
+//                 {adminTasks &&
+//                   adminTasks.map(
+//                     (task) =>
+//                       task.story === id && (
+//                         <TaskCard key={task._id} task={task} />
+//                       )
+//                   )}
+//               </Row>
+//             </div>
+//           </Col>
+//         </Row>
+//       </Container>
