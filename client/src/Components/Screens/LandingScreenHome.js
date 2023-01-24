@@ -1,11 +1,9 @@
 import React from "react";
-
+import { Container } from "react-bootstrap";
 const LandingScreenHome = () => {
   return (
-    <div className="bg-dark">
-      <h1>
-        <p>landing screen</p>
-      </h1>
+    <div className="bg-dark landing-page">
+      <Container></Container>
     </div>
   );
 };

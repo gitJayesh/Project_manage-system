@@ -501,3 +501,31 @@ form {
   justify-content: space-around;
   flex-direction: column;
 }
+
+.auth-page {
+  height: 100vh;
+  position: relative;
+  background: url("../Components/img/login-back.jpg") center center/cover;
+}
+.auth-page::after {
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.auth-page * {
+  z-index: 100;
+}
+
+.background-grey {
+  background: rgba(192, 189, 189, 0.18);
+}
+
+.landing-page {
+  height: 100vh;
+  background: url("../Components/img/two.jpg") center center/cover;
+}
