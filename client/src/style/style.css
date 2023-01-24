@@ -545,7 +545,7 @@ form {
 }
 
 .landing-content {
-  background: red;
+  /* background: red; */
   width: 50%;
   /* margin-top: 100px; */
   text-align: center;
@@ -555,6 +555,19 @@ form {
   right: 3%;
   transform: translateY(-50%);
   color: #fff;
+}
+
+.teext {
+  font-size: 1.6rem;
+  /* border-bottom: #fff 1px solid; */
+}
+.underline {
+  height: 2px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  background-color: #fff;
 }
 
 @media (max-width: 400px) {
