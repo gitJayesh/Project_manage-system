@@ -111,10 +111,6 @@ function SideBar() {
           <Offcanvas.Title>
             <div className="logo">
               <h1>
-                <i
-                  className="fa-solid fa-diagram-project"
-                  style={{ color: "#2076ff", display: "block" }}
-                ></i>
                 <span style={{ color: "#bd0e0e" }}>P</span>
                 <span style={{ color: "#6900a7" }}>M</span>
                 <span style={{ color: "#00a90b" }}>S</span>

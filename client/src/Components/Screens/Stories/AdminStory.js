@@ -39,18 +39,22 @@ const Story = () => {
   // console.log("id", id);
 
   return (
-    <>
+    <div className="story-page">
       <Container>
         <Row>
-          <Col md={8} className="bg-dark">
-            jayesh
+          <Col md={8} className="story-page-body">
+            <div className="story-name">
+              <h1>{story?.storyname}</h1>
+            </div>
+            <div className="story-desc"></div>
+            <div className="story-tasks"></div>
           </Col>
-          <Col md={4} className="bg-primary">
+          <Col md={4} className="story-page-body-side">
             ravi
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 };
 export default Story;

@@ -5,6 +5,7 @@ import TaskCard from "./TaskCard.js";
 import Banner from "../../Layout/Banner";
 import Container from "react-bootstrap/esm/Container.js";
 import { Row } from "react-bootstrap";
+import Table from "react-bootstrap/Table";
 
 const TasksScreen = () => {
   axios.defaults.headers.common[
@@ -42,11 +43,29 @@ const TasksScreen = () => {
     <>
       <Banner title="Tasks" />
       <Container>
-        <Row md={3} sm={2} xs={1}>
-          {sortedAdminTasks &&
-            sortedAdminTasks.map((task) => (
-              <TaskCard key={task._id} task={task} />
-            ))}
+        <Row
+          md={3}
+          lg={4}
+          sm={2}
+          xs={1}
+          className="gap-4 mt-3 justify-content-center align-itmes-center"
+        >
+          <Table striped hover>
+            <thead>
+              <tr>
+                <th>SR.</th>
+                <th>Task Name</th>
+                <th>Description</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedAdminTasks &&
+                sortedAdminTasks.map((task) => (
+                  <TaskCard key={task._id} task={task} />
+                ))}
+            </tbody>
+          </Table>
         </Row>
       </Container>
     </>
