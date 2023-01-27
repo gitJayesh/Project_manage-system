@@ -44,10 +44,15 @@ const Story = () => {
         <Row>
           <Col md={8} className="story-page-body">
             <div className="story-name">
-              <h1>{story?.storyname}</h1>
+              <h1 className="text-uppercase textcenter">{story?.storyname}</h1>
             </div>
-            <div className="story-desc"></div>
-            <div className="story-tasks"></div>
+            <div className="story-desc mt-3">
+              <h4 className=" text-muted text-capitalize">Story description</h4>
+              <p className="lead"> {story?.description}</p>
+            </div>
+            <div className="story-tasks mt-3">
+              <h4 className=" text-muted text-capitalize">Tasks</h4>
+            </div>
           </Col>
           <Col md={4} className="story-page-body-side">
             ravi
