@@ -35,7 +35,7 @@ const StoriesScreen = () => {
           lg={4}
           sm={2}
           xs={1}
-          className="gap-4 justify-content-center align-itmes-center"
+          className="gap-4  justify-content-center align-itmes-center"
         >
           <Table striped hover>
             <thead>

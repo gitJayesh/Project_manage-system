@@ -4,7 +4,7 @@ UI:
 -login/register form -----------------//done//
 -greeting msg (good morning) 
 -remove delete button -----------------//done//
--landing page
+-landing page   -----------------//done//
 -story page change UI
 -modal style is changing
 

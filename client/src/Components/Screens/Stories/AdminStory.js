@@ -39,18 +39,27 @@ const Story = () => {
   // console.log("id", id);
 
   return (
-    <>
+    <div className="story-page">
       <Container>
         <Row>
-          <Col md={8} className="bg-dark">
-            jayesh
+          <Col md={8} className="story-page-body">
+            <div className="story-name">
+              <h1 className="text-uppercase textcenter">{story?.storyname}</h1>
+            </div>
+            <div className="story-desc mt-3">
+              <h4 className=" text-muted text-capitalize">Story description</h4>
+              <p className="lead"> {story?.description}</p>
+            </div>
+            <div className="story-tasks mt-3">
+              <h4 className=" text-muted text-capitalize">Tasks</h4>
+            </div>
           </Col>
-          <Col md={4} className="bg-primary">
+          <Col md={4} className="story-page-body-side">
             ravi
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 };
 export default Story;
