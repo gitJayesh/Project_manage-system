@@ -6,6 +6,7 @@ import Modal from "react-bootstrap/Modal";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import TaskContext from "../../../Context/task/taskContext";
 import AuthContext from "../../../Context/auth/authContext";
+import { Link } from "react-router-dom";
 
 function MyVerticallyCenteredModal(props) {
   const taskContext = useContext(TaskContext);
@@ -112,9 +113,10 @@ function Tasks({ task }) {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Open
-      </Button>
+      <Link onClick={() => setModalShow(true)}>
+        {/* Open */}
+        <i class="fa-sharp fa-solid fa-eye fa-2x"></i>
+      </Link>
       <MyVerticallyCenteredModal
         task={task}
         show={modalShow}

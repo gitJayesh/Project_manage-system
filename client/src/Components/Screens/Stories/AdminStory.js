@@ -11,6 +11,7 @@ import AuthContext from "../../../Context/auth/authContext.js";
 import Container from "react-bootstrap/esm/Container";
 import EditStory from "./EditStory";
 import { Col, Row } from "react-bootstrap";
+import TasksGrid from "./TasksGrid";
 const Story = () => {
   let { id } = useParams();
   // console.log(id);
@@ -52,6 +53,9 @@ const Story = () => {
             </div>
             <div className="story-tasks mt-3">
               <h4 className=" text-muted text-capitalize">Tasks</h4>
+              <div className="task-grid">
+                <TasksGrid adminTasks={adminTasks} id={id} />
+              </div>
             </div>
           </Col>
           <Col md={4} className="story-page-body-side">
