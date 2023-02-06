@@ -1,28 +1,26 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import "../../../style/style.css";
 import Tasks from "../Tasks/Tasks";
 
 const TasksGrid = ({ adminTasks, id }) => {
   console.log(id);
 
   return (
-    <div>
+    <div className="card-grid">
       {adminTasks &&
         adminTasks.map(
           (task) =>
             task.story === id && (
-              <Card
-                style={{ width: "100%" }}
-                className=" card-test d-flex justify-content-between"
-              >
-                <div className="d-flex justify-content-between">
-                  <Card.Text className="place-center">
-                    <h4>{task.taskname}</h4>
-                  </Card.Text>
-                  <Tasks key={task} task={task} />
-                  {/* </div> */}
+              <div className="card-test">
+                <div style={{ height: "100%" }}>
+                  <h5 className="text-capitalize task-name">{task.taskname}</h5>
+                  <p>{task.duedate}</p>
                 </div>
-              </Card>
+                <div>
+                  <Tasks key={task} task={task} />
+                </div>
+              </div>
             )
         )}
     </div>

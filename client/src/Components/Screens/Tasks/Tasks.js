@@ -115,7 +115,7 @@ function Tasks({ task }) {
     <>
       <Link onClick={() => setModalShow(true)}>
         {/* Open */}
-        <i class="fa-sharp fa-solid fa-eye fa-2x"></i>
+        <i class="fa-sharp fa-solid fa-eye "></i>
       </Link>
       <MyVerticallyCenteredModal
         task={task}
