@@ -54,7 +54,7 @@ const Login = () => {
                     {/* </div> */}
                   </Col>
                   <Col className="d-flex justify-content-center align-items-cente background-grey">
-                    <form onSubmit={onSubmit}>
+                    <form className="form" onSubmit={onSubmit}>
                       <div className="login-head place-center">
                         <h3>
                           <span style={{ color: "#377dff" }}>Login</span>

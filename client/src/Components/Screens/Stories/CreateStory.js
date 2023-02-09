@@ -97,7 +97,7 @@ function MyVerticallyCenteredModal(props) {
               value={story.description}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="duedate">
+          <Form.Group className="mb-3 " controlId="duedate">
             <Form.Label>Completion Date</Form.Label>
             <Form.Control
               type="date"

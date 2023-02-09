@@ -503,7 +503,7 @@ ul {
   display: block;
 }
 
-form {
+.form {
   height: 100%;
   width: 90%;
   margin: auto;
