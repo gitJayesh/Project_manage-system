@@ -1,13 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "../../style/style.css";
 
 const Logo = () => {
   return (
-    <div style={logo}>
+    <div className="logo">
       <h1>
-        <i className="fa-solid fa-diagram-project" style={iStyle}></i>
-        <span style={logo1}>P</span>
-        <span style={logo2}>M</span>
-        <span style={logo3}>S</span>
+        <Link to="/" className="logo-link">
+          <span style={logo1}>P</span>
+          <span style={logo2}>M</span>
+          <span style={logo3}>S</span>
+        </Link>
       </h1>
     </div>
   );
@@ -28,15 +31,15 @@ const iStyle = {
 
 const logo1 = {
   color: "#bd0e0e",
-  fontSize: "1.4rem",
+  fontSize: "1.8rem",
 };
 
 const logo2 = {
   color: "#6900a7",
-  fontSize: "1.4rem",
+  fontSize: "1.8rem",
 };
 
 const logo3 = {
-  color: "#00a90b",
-  fontSize: "1.4rem",
+  color: "#ffe600",
+  fontSize: "1.8rem",
 };

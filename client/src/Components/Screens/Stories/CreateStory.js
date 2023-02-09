@@ -138,7 +138,7 @@ function CreateStory() {
   return (
     <>
       <Button variant="primary" onClick={() => setModalShow(true)}>
-        Create Story
+        Add Story
       </Button>
       <MyVerticallyCenteredModal
         users={users && users}

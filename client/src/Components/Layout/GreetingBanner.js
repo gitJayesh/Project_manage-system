@@ -9,10 +9,13 @@ const GreetingBanner = () => {
     <>
       <div className="greeting-banner place-center">
         {isAuthenticated ? (
-          <h2>
-            Hello <span style={{ color: "#DD0426" }}>{user && user.name}</span>,
+          <h3>
+            <h2 style={{ display: "block" }}>
+              Hello{" "}
+              <span style={{ color: "#DD0426" }}>{user && user.name}</span>,
+            </h2>
             Welcome To The Dashboard!
-          </h2>
+          </h3>
         ) : (
           <>
             <h1>

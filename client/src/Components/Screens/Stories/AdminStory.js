@@ -12,6 +12,7 @@ import Container from "react-bootstrap/esm/Container";
 import EditStory from "./EditStory";
 import { Col, Row } from "react-bootstrap";
 import TasksGrid from "./TasksGrid";
+import BackButton from "../../Layout/BackButton";
 const Story = () => {
   let { id } = useParams();
   // console.log(id);
@@ -42,6 +43,7 @@ const Story = () => {
   return (
     <div className="story-page">
       <Container>
+        <BackButton />
         <Row>
           <Col md={8} className="story-page-body">
             <div className="story-name">
