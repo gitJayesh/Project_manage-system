@@ -7,14 +7,11 @@ UI:
 -landing page   -----------------//done//
 -story page change UI
 -modal style is changing
+-user profile page
+-register input fields
+-confirmation message
 
 
 FUNCTIONALITY:
 -login using email or userid
 -forgot password
--user profile page
-
-
-
-
-----how to implement username/userid?

@@ -35,32 +35,22 @@ ul {
   place-items: center;
 }
 
-/* #main-side-bar {
-  height: 100vh;
-  width: 300px;
-  position: fixed;
-  display: grid;
-  place-items: center;
-  z-index: 100;
+.back-button {
+  background: none;
+  border: none;
 }
-
-.main-side-bar {
-  height: 95%;
-  width: 100%;
-  border-right: 1px solid #a7a7a7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-
-} */
 
 .logo {
   height: 65px;
   width: 65px;
-  /* background-color: aquamarine; */
+  /* background-color: #ffe600; */
   display: grid;
   place-items: center;
+}
+
+.logo-link {
+  text-decoration: none;
+  font-size: 1.6rem;
 }
 
 .side-bar-list {
@@ -185,8 +175,41 @@ ul {
   border-radius: 50px;
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  /* grid-gap: 5px; */
+}
+
+.story-tasks {
+  /* margin-top: 1000px; */
+  /* background-color: #f2f2f2; */
+  padding: 5px;
+}
+
 .card-test {
-  width: 100px;
+  height: 75px;
+  /* border: 1px solid #aaa; */
+  width: 100%;
+  /* margin: 0 auto; */
+  margin-bottom: 7.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #efefef;
+  padding: 7.5px;
+  border-right: 5px solid #f02d3a;
+}
+
+.btn-grp {
+  width: 40%;
+  height: auto;
+  /* background-color: #67748e; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card-text-clamp {
@@ -269,6 +292,10 @@ ul {
 
 .greeting-banner * {
   z-index: 10;
+}
+
+.greeting-banner h2 {
+  text-align: center;
 }
 
 .greeting-banner::after {
@@ -360,6 +387,10 @@ ul {
   height: 100 px;
   width: 90%;
   margin: 25px auto;
+  /* background-color: #0a369d; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .dashboard-cards {
@@ -486,7 +517,7 @@ ul {
   display: block;
 }
 
-form {
+.form {
   height: 100%;
   width: 90%;
   margin: auto;
@@ -580,17 +611,18 @@ form {
 .story-page-body {
   /* border-left: #0a369d 3px solid; */
   padding-top: 10px;
-  height: 50vh;
+  height: auto;
+  margin-bottom: 50px;
 }
 .story-page-body-side {
   border-left: #0a369d 1px solid;
   /* background-color: #f2f2f2; */
-  height: 70vh;
+  height: 85vh;
 }
 
 .story-name {
   /* background: #377dff; */
-  height: 50px;
+  height: auto;
   width: 100%;
   margin-bottom: 10px;
   border-bottom: 1.5px solid #333;
@@ -601,16 +633,22 @@ form {
   background-color: #f2f2f2;
   padding: 5px;
 }
-.story-tasks {
-  /* background: #a0ffd7; */
-}
 
 /* 
 .desc-title{
   color:
 } */
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
+  .dashboard-cards {
+    flex-direction: column;
+    height: 700px;
+  }
+
+  .greeting-banner h2 {
+    font-size: 1.4rem;
+  }
+
   .landing-content {
     width: 320px;
     right: 50%;
@@ -618,7 +656,92 @@ form {
     transform: translate(45%, -50%);
     /* background: #fff; */
   }
+
+  .nav-bar-search {
+    /* background-color: #67748e; */
+    justify-content: flex-start;
+  }
+
+  .logout-btn {
+    /* background-color: #f02d3a; */
+    justify-content: flex-end;
+  }
+
   .textcenter {
     text-align: center;
+  }
+
+  .task-name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .story-tasks {
+    margin-top: 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-page-body-side {
+    height: auto;
+  }
+
+  .btn-grp {
+    width: 100%;
+    /* background-color: #0a369d; */
+  }
+}
+
+@media (max-width: 800px) {
+  .dashboard-cards {
+    flex-direction: column;
+    height: 700px;
+  }
+
+  .greeting-banner h2 {
+    font-size: 1.4rem;
+  }
+
+  .landing-content {
+    width: 320px;
+    right: 50%;
+    /* top: 25%; */
+    transform: translate(45%, -50%);
+    /* background: #fff; */
+  }
+
+  .nav-bar-search {
+    /* background-color: #67748e; */
+    justify-content: flex-start;
+  }
+
+  .logout-btn {
+    /* background-color: #f02d3a; */
+    justify-content: flex-end;
+  }
+
+  .textcenter {
+    text-align: center;
+  }
+
+  .task-name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .story-tasks {
+    margin-top: 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-page-body-side {
+    height: auto;
   }
 }

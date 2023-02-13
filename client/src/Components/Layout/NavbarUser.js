@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import React from "react";
 // import AuthContext from "../../Context/auth/authContext";
 import SideBar from "./SideBar";
 import logo from "../Screens/logo.png";
+import Logo from "./Logo";
 
 const NavbarUser = () => {
   // const authContext = useContext(AuthContext);
@@ -15,23 +15,10 @@ const NavbarUser = () => {
     <>
       <nav className="nav-bar">
         <div className="nav-bar-search">
-          <Link to="/">
-            {/* <div className="logo">
-              <h1>
-                <span style={{ color: "#bd0e0e" }}>P</span>
-                <span style={{ color: "#6900a7" }}>M</span>
-                <span style={{ color: "#00a90b" }}>S</span>
-              </h1>
-            </div> */}
-            <img src={logo} alt="hello" />
-          </Link>
+          <Logo />
         </div>
         <div className="logout-btn ">
           <SideBar />
-          {/* <p>{userInfo && userInfo.name} </p>
-          <Link to="#">
-            <i className="fa-solid fa-right-from-bracket fa-2x"></i>
-          </Link> */}
         </div>
       </nav>
     </>

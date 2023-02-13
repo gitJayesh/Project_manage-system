@@ -66,8 +66,8 @@ function MyVerticallyCenteredModal(props) {
           <Form.Label>Completion date</Form.Label>
           <p>{duedate}</p>
         </Form.Group>
-        <form onSubmit={onSubmit}>
-          <Form.Group>
+        <form onSubmit={onSubmit} className="w-100">
+          <Form.Group className=" w-100">
             <Form.Label>Progress</Form.Label>
 
             <ProgressBar now={status} animated label={`${status}%`} />
@@ -115,7 +115,7 @@ function Tasks({ task }) {
     <>
       <Link onClick={() => setModalShow(true)}>
         {/* Open */}
-        <i class="fa-sharp fa-solid fa-eye fa-2x"></i>
+        <i class="fa-sharp fa-solid fa-eye "></i>
       </Link>
       <MyVerticallyCenteredModal
         task={task}

@@ -63,7 +63,7 @@ const Register = () => {
                     />
                   </Col>
                   <Col className="d-flex justify-content-center align-items-center">
-                    <form onSubmit={onSubmit}>
+                    <form className="form" onSubmit={onSubmit}>
                       <div className="register-head">
                         user <span style={{ color: "#377dff" }}>Register</span>
                       </div>
