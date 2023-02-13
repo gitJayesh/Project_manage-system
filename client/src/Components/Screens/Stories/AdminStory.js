@@ -11,7 +11,7 @@ import AuthContext from "../../../Context/auth/authContext.js";
 import Container from "react-bootstrap/esm/Container";
 import EditStory from "./EditStory";
 import { Col, Row } from "react-bootstrap";
-import TasksGrid from "./TasksGrid";
+import TasksGrid from "../Tasks/TasksGrid";
 import BackButton from "../../Layout/BackButton";
 const Story = () => {
   let { id } = useParams();
@@ -37,7 +37,7 @@ const Story = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   console.log(story);
-  console.log("jayesh ", adminTasks);
+
   // console.log("id", id);
 
   return (
@@ -54,14 +54,30 @@ const Story = () => {
               <p className="lead"> {story?.description}</p>
             </div>
             <div className="story-tasks mt-3">
-              <h4 className=" text-muted text-capitalize">Tasks</h4>
-              <div className="task-grid">
-                <TasksGrid adminTasks={adminTasks} id={id} />
-              </div>
+              <h4 className=" text-muted text-capitalize">Actions</h4>
+              {user && user.isPM && (
+                <div className="btn-grp">
+                  <EditStory story={story} />
+                  <Button onClick={handleDelete} variant="danger" type="submit">
+                    Delete Story
+                  </Button>
+                </div>
+              )}
             </div>
           </Col>
-          <Col md={4} className="story-page-body-side">
-            ravi
+          <Col md={4} className="story-page-body-side ">
+            <div className="w-100 d-flex mb-2 align-items-center justify-content-between">
+              <h3>Tasks</h3>
+              <CreateTask
+                className="mr-2"
+                id={id}
+                name={story?.storyname}
+                user={story?.user}
+              />
+            </div>
+            <div className="task-grid">
+              <TasksGrid adminTasks={adminTasks} id={id} />
+            </div>
           </Col>
         </Row>
       </Container>

@@ -1,15 +1,25 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Alert } from "react-bootstrap";
 import "../../../style/style.css";
-import Tasks from "../Tasks/Tasks";
+import Tasks from "./Tasks";
 
 const TasksGrid = ({ adminTasks, id }) => {
   console.log(id);
 
+  const storyTasks = [];
+
+  adminTasks &&
+    adminTasks.filter((task) => task.story === id && storyTasks.push(task));
+
+  console.log(storyTasks, "Story tasks");
+
   return (
     <div className="card-grid">
-      {adminTasks &&
-        adminTasks.map(
+      {storyTasks.length === 0 && (
+        <Alert variant="info">No Tasks added for this story.</Alert>
+      )}
+      {storyTasks &&
+        storyTasks.map(
           (task) =>
             task.story === id && (
               <div className="card-test">
