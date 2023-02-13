@@ -13,3 +13,8 @@ FUNCTIONALITY:
 -login using email or userid
 -forgot password
 -user profile page
+
+
+
+
+----how to implement username/userid?
