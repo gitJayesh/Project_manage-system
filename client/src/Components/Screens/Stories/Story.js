@@ -10,7 +10,10 @@ import Banner from "../../Layout/Banner.js";
 import AuthContext from "../../../Context/auth/authContext.js";
 import Container from "react-bootstrap/esm/Container";
 import EditStory from "./EditStory";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Alert } from "react-bootstrap";
+import UserTasksGrid from "../Tasks/UserTaskGrid";
+import BackButton from "../../Layout/BackButton";
+
 const Story = () => {
   let { id } = useParams();
   // console.log(id);
@@ -39,50 +42,101 @@ const Story = () => {
   // console.log("id", id);
 
   return (
-    <>
+    <div className="story-page">
       <Container>
+        <BackButton />
         <Row>
-          <Col>
-            <Banner title={story?.storyname} />
-            <div className="project-desc">
-              <h2 style={{ color: "black" }}>Story Description</h2>
-              {story && <p className="lead">{story.description}</p>}
+          <Col md={8} className="story-page-body">
+            <div className="story-name">
+              <h1 className="text-uppercase textcenter">{story?.storyname}</h1>
             </div>
-
-            <div className="create-task d-flex justify-content-evenly align-items-centre">
+            <div className="story-desc mt-3">
+              <h4 className=" text-muted text-capitalize">Story description</h4>
+              <p className="lead"> {story?.description}</p>
+            </div>
+            <div className="story-tasks mt-3">
+              {/* <h4 className=" text-muted text-capitalize">Actions</h4> */}
+              {user && user.isPM && (
+                <div className="btn-grp">
+                  <EditStory story={story} />
+                  <Button onClick={handleDelete} variant="danger" type="submit">
+                    Delete Story
+                  </Button>
+                </div>
+              )}
+              <Alert variant="primary">
+                Request Project Manager to clarify all the queries regarding
+                this story:{" "}
+                <span
+                  style={{ textTransform: "capitalize", fontWeight: "bold" }}
+                >
+                  {story?.storyname}
+                </span>
+                .
+              </Alert>
+            </div>
+          </Col>
+          <Col md={4} className="story-page-body-side ">
+            <div className="w-100 d-flex mb-2 align-items-center justify-content-between">
+              <h3>Tasks</h3>
               <CreateTask
                 className="mr-2"
                 id={id}
                 name={story?.storyname}
                 user={story?.user}
               />
-              {user && user.isPM && (
-                <>
-                  <EditStory story={story} />
-                  <Button onClick={handleDelete} variant="danger" type="submit">
-                    Delete
-                  </Button>
-                </>
-              )}
             </div>
-          </Col>
-          <Col className="mt-5">
-            <h1>Tasks</h1>
-            <div className="task-scroll">
-              <Row lg={1} md={1} sm={1}>
-                {tasks &&
-                  tasks.map(
-                    (task) =>
-                      task.story === id && (
-                        <TaskCard key={task._id} task={task} />
-                      )
-                  )}
-              </Row>
+            <div className="task-grid">
+              <UserTasksGrid tasks={tasks} id={id} />
             </div>
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
+    // <>
+    //   <Container>
+    //     <Row>
+    //       <Col>
+    //         <Banner title={story?.storyname} />
+    //         <div className="project-desc">
+    //           <h2 style={{ color: "black" }}>Story Description</h2>
+    //           {story && <p className="lead">{story.description}</p>}
+    //         </div>
+
+    //         <div className="create-task d-flex justify-content-evenly align-items-centre">
+    //           <CreateTask
+    //             className="mr-2"
+    //             id={id}
+    //             name={story?.storyname}
+    //             user={story?.user}
+    //           />
+    //           {user && user.isPM && (
+    //             <>
+    //               <EditStory story={story} />
+    //               <Button onClick={handleDelete} variant="danger" type="submit">
+    //                 Delete
+    //               </Button>
+    //             </>
+    //           )}
+    //         </div>
+    //       </Col>
+    //       <Col className="mt-5">
+    //         <h1>Tasks</h1>
+    //         <div className="task-scroll">
+    //           <Row lg={1} md={1} sm={1}>
+    //             {tasks &&
+    //               tasks.map(
+    //                 (task) =>
+    //                   task.story === id && (
+    //                     <TaskCard key={task._id} task={task} />
+    //                   )
+    //               )}
+    //           </Row>
+    //         </div>
+    //       </Col>
+    //     </Row>
+    //   </Container>
+    // </>
   );
 };
 export default Story;
