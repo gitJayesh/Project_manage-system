@@ -8,6 +8,7 @@ import Banner from "../Layout/Banner.js";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
+import BackButton from "../Layout/BackButton.js";
 
 const StoriesScreen = () => {
   axios.defaults.headers.common[
@@ -29,6 +30,9 @@ const StoriesScreen = () => {
     <>
       <Banner title="Engineer Stories" />
       <div className="create-task">{user && user.isPM && <CreateStory />}</div>
+      <Container>
+        <BackButton />
+      </Container>
       <Container>
         <Row
           md={3}
