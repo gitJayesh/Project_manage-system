@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 const LandingScreenHome = () => {
   return (
     <div className="bg-dark landing-page place-center">
@@ -15,12 +15,12 @@ const LandingScreenHome = () => {
             folks don’t simply skip over it entirely.
           </p>
           <p>
-            <a href="#" class="btn btn-primary my-2 mx-2">
+            <Link to="/register" class="btn btn-primary my-2 mx-2">
               Sign up
-            </a>
-            <a href="#" class="btn btn-secondary my-2">
+            </Link>
+            <Link to="/login" class="btn btn-secondary my-2">
               Sign In
-            </a>
+            </Link>
           </p>
         </div>
       </div>

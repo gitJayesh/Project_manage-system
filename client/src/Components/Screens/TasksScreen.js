@@ -7,6 +7,7 @@ import Banner from "../Layout/Banner.js";
 import Container from "react-bootstrap/esm/Container.js";
 import Table from "react-bootstrap/Table";
 import Row from "react-bootstrap/Row";
+import BackButton from "../Layout/BackButton.js";
 
 const TasksScreen = () => {
   axios.defaults.headers.common[
@@ -23,7 +24,9 @@ const TasksScreen = () => {
   return (
     <>
       <Banner title="Tasks" />
-
+      <Container>
+        <BackButton />
+      </Container>
       <Container>
         <Row
           md={3}
@@ -36,8 +39,8 @@ const TasksScreen = () => {
             <thead>
               <tr>
                 <th>#</th>
-                <th>Story Name</th>
-                <th>Description</th>
+                <th>Task Name</th>
+                <th>Task Description</th>
                 <th>Action</th>
               </tr>
             </thead>

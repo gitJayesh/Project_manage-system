@@ -16,6 +16,7 @@ import NavbarUser from "./Components/Layout/NavbarUser";
 import AuthContext from "../src/Context/auth/authContext";
 import { useContext } from "react";
 import AdminStory from "./Components/Screens/Stories/AdminStory.js";
+import Footer from "./Components/Layout/Footer";
 
 function App() {
   axios.defaults.headers.common[
@@ -53,6 +54,7 @@ function App() {
                   <Route path="adminstories" element={<AdminStoriesScreen />} />
                   <Route path="admintasks" element={<AdminTaskScreen />} />
                 </Routes>
+                <Footer />
               </div>
             ) : (
               //landing screen
@@ -63,6 +65,7 @@ function App() {
                   <Route path="login" element={<Login />} />
                   <Route path="register" element={<Register />} />
                 </Routes>
+                <Footer />
               </div>
             )}
           </div>

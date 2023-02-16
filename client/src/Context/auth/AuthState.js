@@ -77,14 +77,14 @@ const AuthState = (props) => {
         type: USER_LOGIN_SUCCESS,
         payload: res.data,
       });
-      alert("Login Successful");
+      // alert("Login Successful");
       loadUser();
     } catch (err) {
       dispatch({
         type: USER_LOGIN_FAIL,
         payload: err.response.data.msg,
       });
-      alert("Wrong Email/Password");
+      // alert("Wrong Email/Password");
     }
   };
 
